@@ -1,0 +1,284 @@
+@import "fonts"
+
+//----------------------fonts---------------------
+$fonts: 'montserrat', sans-serif
+$title: 'playfairdisplay', sans-serif
+//---------------------end-fonts---------------------
+
+
+//----------------------color---------------------
+$accent: #cf816d
+$text: #232a32
+//---------------------end-color---------------------
+
+
+html, body
+	height: 100%
+
+body
+	overflow-x: hidden
+	position: relative
+	min-width: 400px
+	font-family: $fonts
+	font-size: 14px
+	color: $text
+	line-height: 1.75
+	font-weight: 400
+
+::selection
+	background-color: $accent
+	color: #fff
+
+section
+	overflow: hidden
+	
+h1, h2, h3, h4, h5, h6
+	font-family: $title
+	font-weight: 700
+	line-height: 1.4
+	margin: 0
+	padding: 0
+
+h1
+	font-size: 72px
+	color: #fff
+	text-transform: uppercase
+	margin-bottom: 20px
+	line-height: 1.3
+
+	span
+		text-transform: none
+
+h2
+	position: relative
+	font-size: 48px
+	line-height: 1.2
+
+	&::after
+		content: ""
+		display: block
+		width: 70%
+		height: 1px
+		background-color: $accent
+		margin-top: 20px
+		margin-bottom: 40px
+
+h3
+	font-family: $fonts
+	font-weight: 700
+	font-size: 18px
+	margin-bottom: 10px
+
+h4
+	font-size: 36px
+	color: #fff
+
+h5
+	font-family: $fonts
+	text-transform: uppercase
+	font-weight: 600
+	margin-bottom: 15px
+
+h6
+	font-size: 24px
+
+ul
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+i
+	font-style: normal
+	font-size: 16px
+
+input, textarea
+	border: #808080 1px solid
+	border-radius: 0
+	outline: none
+	box-shadow: none
+	-webkit-appearance: none
+	&:focus:required:invalid
+		border-color: #808080
+		outline: none
+		box-shadow: none
+		-webkit-appearance: non
+	&:required:valid
+		border-color: #808080
+		outline: none
+		box-shadow: none
+		-webkit-appearance: non
+
+	&::placeholder
+		color: #808080
+		font-size: 12px
+		text-transform: uppercase
+		line-height: 1
+
+input
+	padding: 15px 25px
+	border-radius: 40px
+	font-weight: 400
+	line-height: 1
+	text-align: center
+
+b, strong
+	font-weight: 700
+
+p
+	margin: 0
+	padding: 0
+
+a,
+a:focus,
+a:hover
+	outline: none
+
+
+//--------------------------------------form-------------------------------------------
+
+.form
+	label.error
+		position: absolute
+		top: -20px
+		right: 0
+		left: 0
+		transition: all .3s
+		animation: error .3s linear 1 forwards
+		color: red
+		text-align: center
+		font-weight: 600
+
+
+.calculat
+	position: relative
+	
+	input
+		padding: 15px 35px 15px 35px
+		width: 110px
+
+	.button
+		position: absolute
+		top: 10px
+		transform: translate(-50%, 0)
+		font-size: 18px
+		font-weight: 700
+		cursor: pointer
+		border: none
+		outline: none
+		background-color: #fff
+
+	.minus
+		left: 30px
+
+	.pluse
+		right: 10px
+
+
+//-----------------------------------hamburgerа---------------------------
+.hamburger
+	display: none
+	position: absolute
+	transition: all .4s linear
+	right: 15px
+	top: 55%
+	padding: 0
+	transform: translate(0, -50%)
+	&:focus
+		outline: none
+
+	.hamburger-box
+		width: 30px
+		right: 0
+
+	.hamburger-inner,
+	.hamburger-inner:after,
+	.hamburger-inner:before
+		background-color: #fff
+		width: 35px
+		height: 3px
+		right: 0
+
+	.is-active
+		position: fixed
+		z-index: 1001
+
+//-------------------------------------карта-map--------------------------------
+#map
+	height: 650px
+
+//---------------------------------------------------------animation-------------------------------------
+//----------------------error--------------------
+
+@keyframes error
+		0%
+			transform: scale(0)
+		
+		100%
+			transform: scale(1)
+
+@keyframes error-back
+		0%
+			transform: scale(1)
+		
+		100%
+			transform: scale(0)
+
+//----------------------scale-slider-------------------
+
+@keyframes scale
+		0%
+			transform: scale(1)
+		
+		100%
+			transform: scale(1.1)
+
+@keyframes scale-back
+		0%
+			transform: scale(1.1)
+		
+		100%
+			transform: scale(1)
+
+//----------------------card - bg -------------------
+@keyframes bg
+		0%
+			padding: 35px 25px
+		100%
+			padding: 90px 25px
+
+@keyframes bg-back
+		0%
+			padding: 90px 25px
+		100%
+			padding: 35px 25px
+
+//----------------------opacity -------------------
+@keyframes opacity
+		0%
+			opacity: 0
+		100%
+			opacity: 1
+
+@keyframes opacity-back
+		0%
+			opacity: 1
+		100%
+			opacity: 0
+
+//----------------------------------slider---------------------
+.swiper-button-prev
+	background-image: url(../img/icon/arrow.svg)
+	width: 40px
+	height: 40px
+	outline: none
+	background-size: 40px 40px
+	left: 15px
+
+.swiper-button-next
+	background-image: url(../img/icon/arrow.svg)
+	transform: rotate(-180deg)
+	width: 40px
+	height: 40px
+	outline: none
+	background-size: 40px 40px
+	right: 15px

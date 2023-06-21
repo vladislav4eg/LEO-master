@@ -1,0 +1,85 @@
+.btn
+	position: relative
+	display: inline-block
+	border: none
+	outline: none
+	padding: 20px 45px
+	border-radius: 40px
+	text-align: center
+	line-height: 1
+	color: #fff
+	font-weight: 700
+	letter-spacing: 1px
+	box-shadow: 0 10px 20px rgba($accent, .4)
+	background-image: linear-gradient(to bottom, #e0b894, #d18973)
+	text-transform: uppercase
+	font-size: 14px
+
+	&:hover
+		outline: none
+		border: none
+		color: #fff
+		text-decoration: none
+		cursor: pointer
+		background-image: linear-gradient(to bottom, #e0b894, #e0b894)
+		transition: all .3s
+
+	&:focus
+		outline: none
+		border: none
+		color: #fff
+		text-decoration: none
+		cursor: pointer
+		background-image: linear-gradient(to bottom, #d18973, #d18973)
+		transition: all .3s
+
+.btn-pluse
+	position: absolute
+	right: 30px
+	bottom: -20px
+	white-space: nowrap
+	width: 46px
+	height: 46px
+	padding: 16px 0
+	overflow: hidden
+	animation: btn-pluse_back .3s linear 1 forwards
+	font-size: 12px
+	text-align: left
+
+	b
+		opacity: 0
+
+	&::before
+		content: ""
+		position: absolute
+		right: 8px
+		top: 50%
+		transform: translate(0, -50%)
+		width: 30px
+		height: 30px
+		background-color: #fff
+		border-radius: 50%
+
+	&::after
+		content: "+"
+		position: absolute
+		top: 50%
+		right: 17px
+		transform: translate(0, -50%)
+		color: #000
+		font-size: 16px
+		font-weight: 600
+
+@keyframes btn-pluse
+		0%
+			width: 45px
+		
+		100%
+			width: 170px
+
+@keyframes btn-pluse_back
+	0%
+		width: 170px
+	
+	100%
+		width: 45px
